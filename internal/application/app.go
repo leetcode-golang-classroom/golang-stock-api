@@ -51,6 +51,11 @@ func (app *App) Start(ctx context.Context) error {
 		}
 		util.CloseChannel(errCh)
 	}()
+	defer func() {
+		if err := app.db.Close(); err != nil {
+			log.Println("failed to close db connection", err)
+		}
+	}()
 	select {
 	case err := <-errCh:
 		return err
