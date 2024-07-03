@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/leetcode-golang-classroom/golang-stock-api/internal/services/stock"
+	"github.com/leetcode-golang-classroom/golang-stock-api/internal/service/stock"
 )
 
 func NewRouter() *mux.Router {
